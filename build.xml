@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+
+<project name="EuromillionGame-portlet" basedir="." default="deploy">
+	<import file="/home/aritz/proiektuak/emg/liferay6200/pluginsSDK6200/portlets/build-common-portlet.xml" />
+</project>

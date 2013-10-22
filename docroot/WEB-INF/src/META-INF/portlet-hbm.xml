@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="net.sareweb.emg.model.Draw" />
+	<import class="net.sareweb.emg.model.GoogleDevice" />
+	<import class="net.sareweb.emg.model.Proposal" />
+	<class name="net.sareweb.emg.model.impl.DrawImpl" table="EuroMillionGame_Draw">
+		<cache usage="read-write" />
+		<id name="drawId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="number1" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number2" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number3" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number4" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number5" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="star1" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="star2" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number1Guess" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number2Guess" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number3Guess" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number4Guess" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number5Guess" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="star1Guess" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="star2Guess" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="drawDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifyDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="net.sareweb.emg.model.impl.GoogleDeviceImpl" table="EuroMillionGame_GoogleDevice">
+		<id name="googleDeviceId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="emailAddress" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="registrationId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="net.sareweb.emg.model.impl.ProposalImpl" table="EuroMillionGame_Proposal">
+		<cache usage="read-write" />
+		<id name="proposalId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="drawId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="emailAddress" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="number1" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number2" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number3" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number4" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="number5" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="star1" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="star2" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.StringType" column="type_" />
+		<property name="statisticalPopulation" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="winnings" type="com.liferay.portal.dao.orm.hibernate.FloatType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifyDate" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>

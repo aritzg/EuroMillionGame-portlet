@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="net.sareweb.emg">
+	<author>A.Galdos</author>
+	<namespace>EuroMillionGame</namespace>
+
+	<entity name="Draw" local-service="true" remote-service="true" >
+
+		<!-- PK fields -->
+
+		<column name="drawId" type="long" primary="true" />
+
+		<column name="number1" type="int" />
+		<column name="number2" type="int" />
+		<column name="number3" type="int" />
+		<column name="number4" type="int" />
+		<column name="number5" type="int" />
+		<column name="star1" type="int" />
+		<column name="star2" type="int" />
+
+		<column name="number1Guess" type="int" />
+		<column name="number2Guess" type="int" />
+		<column name="number3Guess" type="int" />
+		<column name="number4Guess" type="int" />
+		<column name="number5Guess" type="int" />
+		<column name="star1Guess" type="int" />
+		<column name="star2Guess" type="int" />
+
+		<column name="drawDate" type="Date" />
+		<column name="modifyDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="drawDate" />
+		</order>
+	</entity>
+
+	<entity name="Proposal" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="proposalId" type="long" primary="true" />
+
+		<!-- Audit fields -->
+		<column name="drawId" type="long" />
+		<column name="emailAddress" type="String" />
+
+		<column name="number1" type="int" />
+		<column name="number2" type="int" />
+		<column name="number3" type="int" />
+		<column name="number4" type="int" />
+		<column name="number5" type="int" />
+		<column name="star1" type="int" />
+		<column name="star2" type="int" />
+
+		<column name="type" type="String" /><!-- ACTUAL | STATISTICAL -->
+		<column name="statisticalPopulation" type="long" /> <!-- Num of proposals used to calculate STATISTICAL proposal -->
+		<column name="winnings" type="float" />
+
+		<column name="createDate" type="Date" />
+		<column name="modifyDate" type="Date" />
+
+		<!-- Order -->
+		<order by="asc">
+			<order-column name="modifyDate" />
+		</order>
+
+		<finder return-type="Collection" name="DrawId">
+			<finder-column name="drawId"></finder-column>
+		</finder>
+	</entity>
+
+	<entity name="GoogleDevice" local-service="true" remote-service="true"
+		cache-enabled="false">
+
+		<!-- PK fields -->
+		<column name="googleDeviceId" type="long" primary="true" />
+
+		<column name="emailAddress" type="String" />
+
+		<column name="registrationId" type="String" />
+
+		<!-- Audit fields -->
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<finder return-type="GoogleDevice" name="RegistrationId">
+			<finder-column name="registrationId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="EmailAddress">
+			<finder-column name="emailAddress"></finder-column>
+		</finder>
+
+	</entity>
+</service-builder>

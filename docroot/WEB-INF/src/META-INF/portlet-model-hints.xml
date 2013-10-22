@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="net.sareweb.emg.model.Draw">
+		<field name="drawId" type="long" />
+		<field name="number1" type="int" />
+		<field name="number2" type="int" />
+		<field name="number3" type="int" />
+		<field name="number4" type="int" />
+		<field name="number5" type="int" />
+		<field name="star1" type="int" />
+		<field name="star2" type="int" />
+		<field name="number1Guess" type="int" />
+		<field name="number2Guess" type="int" />
+		<field name="number3Guess" type="int" />
+		<field name="number4Guess" type="int" />
+		<field name="number5Guess" type="int" />
+		<field name="star1Guess" type="int" />
+		<field name="star2Guess" type="int" />
+		<field name="drawDate" type="Date" />
+		<field name="modifyDate" type="Date" />
+	</model>
+	<model name="net.sareweb.emg.model.GoogleDevice">
+		<field name="googleDeviceId" type="long" />
+		<field name="emailAddress" type="String" />
+		<field name="registrationId" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="net.sareweb.emg.model.Proposal">
+		<field name="proposalId" type="long" />
+		<field name="drawId" type="long" />
+		<field name="emailAddress" type="String" />
+		<field name="number1" type="int" />
+		<field name="number2" type="int" />
+		<field name="number3" type="int" />
+		<field name="number4" type="int" />
+		<field name="number5" type="int" />
+		<field name="star1" type="int" />
+		<field name="star2" type="int" />
+		<field name="type" type="String" />
+		<field name="statisticalPopulation" type="long" />
+		<field name="winnings" type="float" />
+		<field name="createDate" type="Date" />
+		<field name="modifyDate" type="Date" />
+	</model>
+</model-hints>

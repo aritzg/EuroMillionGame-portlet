@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="net.sareweb.emg.service.DrawLocalService" class="net.sareweb.emg.service.impl.DrawLocalServiceImpl" />
+	<bean id="net.sareweb.emg.service.DrawService" class="net.sareweb.emg.service.impl.DrawServiceImpl" />
+	<bean id="net.sareweb.emg.service.persistence.DrawPersistence" class="net.sareweb.emg.service.persistence.DrawPersistenceImpl" parent="basePersistence" />
+	<bean id="net.sareweb.emg.service.GoogleDeviceLocalService" class="net.sareweb.emg.service.impl.GoogleDeviceLocalServiceImpl" />
+	<bean id="net.sareweb.emg.service.GoogleDeviceService" class="net.sareweb.emg.service.impl.GoogleDeviceServiceImpl" />
+	<bean id="net.sareweb.emg.service.persistence.GoogleDevicePersistence" class="net.sareweb.emg.service.persistence.GoogleDevicePersistenceImpl" parent="basePersistence" />
+	<bean id="net.sareweb.emg.service.ProposalLocalService" class="net.sareweb.emg.service.impl.ProposalLocalServiceImpl" />
+	<bean id="net.sareweb.emg.service.ProposalService" class="net.sareweb.emg.service.impl.ProposalServiceImpl" />
+	<bean id="net.sareweb.emg.service.persistence.ProposalPersistence" class="net.sareweb.emg.service.persistence.ProposalPersistenceImpl" parent="basePersistence" />
+</beans>

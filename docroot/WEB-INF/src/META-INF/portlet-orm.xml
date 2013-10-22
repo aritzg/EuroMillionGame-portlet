@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="net.sareweb.emg.model.impl.DrawModelImpl">
+		<attributes>
+			<id name="drawId" />
+			<basic name="number1" />
+			<basic name="number2" />
+			<basic name="number3" />
+			<basic name="number4" />
+			<basic name="number5" />
+			<basic name="star1" />
+			<basic name="star2" />
+			<basic name="number1Guess" />
+			<basic name="number2Guess" />
+			<basic name="number3Guess" />
+			<basic name="number4Guess" />
+			<basic name="number5Guess" />
+			<basic name="star1Guess" />
+			<basic name="star2Guess" />
+			<basic name="drawDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifyDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="net.sareweb.emg.model.impl.GoogleDeviceModelImpl">
+		<attributes>
+			<id name="googleDeviceId" />
+			<basic name="emailAddress" />
+			<basic name="registrationId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="net.sareweb.emg.model.impl.ProposalModelImpl">
+		<attributes>
+			<id name="proposalId" />
+			<basic name="drawId" />
+			<basic name="emailAddress" />
+			<basic name="number1" />
+			<basic name="number2" />
+			<basic name="number3" />
+			<basic name="number4" />
+			<basic name="number5" />
+			<basic name="star1" />
+			<basic name="star2" />
+			<basic name="type">
+				<column name="TYPE_" />
+			</basic>
+			<basic name="statisticalPopulation" />
+			<basic name="winnings" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifyDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="net.sareweb.emg.model.impl.DrawImpl" name="Draw">
+		<table name="EuroMillionGame_Draw" />
+		<attributes />
+	</entity>
+	<entity class="net.sareweb.emg.model.impl.GoogleDeviceImpl" name="GoogleDevice">
+		<table name="EuroMillionGame_GoogleDevice" />
+		<attributes />
+	</entity>
+	<entity class="net.sareweb.emg.model.impl.ProposalImpl" name="Proposal">
+		<table name="EuroMillionGame_Proposal" />
+		<attributes />
+	</entity>
+</entity-mappings>
